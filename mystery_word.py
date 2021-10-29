@@ -1,60 +1,62 @@
-# import string
-
-mystery_word = ["Dog"]
-letters_guessed = []
-WORDLIST_FILE = "words.txt"
-
-#opens and formats WORDLIST_FILE
-# def word_file_opener():
-# inFile = open(WORDLIST_FILE, 'r')
+# select random word from words.txt **
+# import random module **
+# open text file with syntax **
+# select one word from list to use for testing **
 
 
+# show mystery word as underscores to use*
+# ask for user guess (upper or lowercase does not matter)*
+# validate user input if user enters more than one letter*
+    # show user error: "Only guess one letter at a time"
 
-print("Welcome to Mystery Word")
+# show user if guess is part of word*
+    # replace underscore with letter*
+    # show letters that have not been guessed
+    # put user guessed letters in a list
 
-for i in range(len(mystery_word)):
-    print("I am thinking of a word that is " + (i) + " long.")
-#triple check on concatination rules. I think Janelle used something like this earlier this week.
-#show available letters.
+# limit number of user guesses to 8
+    # keep track of usere guess count
+    # remind user how many guesses are left
+    # user only loses guess if guess is incorrect
+    # display mystery word if user runs out of guesses
+    # show error  message if they guess the same letter twice
+        # do not count as a guess
 
-#letters guessed
-# import string
-# alphabet = string.ascii_lowercase
-# for any letters in word_guessed
-# remove letter from remaining letters
+# prompt user to play again when the game ends
 
-# def word_guessed(mystery_word, letters_guessed):
-#functions to put letters correctly guessed into a string
+# empty list for words
+import random
+words = []
+underscores = []
+guesses = []
+end_game = False
 
-# def random_word(word_list):
-#  return random.choice(word_list)
-    
+with open('words.txt') as file:
+    strings = file.readlines()
 
-#function to put incorrect guesses into another string
+    for string in strings:
+        words.append(string)
+    random_word = words[7].lower()
+    random_word = random_word.replace("\n", "")
 
-#will likely need to convert words.txt into a list at the letter level, so going to need the .readline function
-# random_word = random_words_generator()
-# wordlist = formatted_words()
-# def word_file_opener(file):
-#     with open('words.txt') as text:
-#         line = text.readline()
-#         print(f"{len(line)} lines in the file.")
-#         line = line.split(" ")
-#         print(line)
+    word_length = range(len(random_word))
+    for num in word_length:
+        underscores.append('_')
+# joins strings into one sting "" means no spaces
+    underscores = "".join(underscores)
+    print(underscores)
+    user_input = input('Make a guess..').lower()
 
-# if __name__ == "__main__":
-#     import argparse
-#     from pathlib import Path
+# [idx for idx, item in enumerate(random-word_list) if item in a[:idx]]
+    while user_input != 'Quit!' and end_game == False:
+        print(underscores)
+        user_input
+    for index in range(len(random_word)):
+        if random_word[index] == user_input:
+            underscores = underscores[0:index] + \
+                user_input + underscores[index+1:]
+    print(underscores)
+    user_input = input('Guess again..')
 
-#     parser = argparse.ArgumentParser(
-#         description='Get the word frequency in a text file.')
-#     parser.add_argument('words.txt', help='file to read')
-#     args = parser.parse_args()
-
-# """"this calls the file to run"""
-# file = Path(args.file)
-# if file.is_file():
-#     random_words('words.txt')
-# else:
-#     print(f"{file} does not exist!")
-#     exit(1)
+        if user_input == 'Quit':
+            end_game = True
