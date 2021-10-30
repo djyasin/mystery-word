@@ -64,21 +64,21 @@ with open('words.txt') as file:
     guess_count += 1
     print("Number of guesses made: " + (str(guess_count)))
 
-    while user_input != 'Quit' and end_game == False:
+while user_input != 'Quit' and end_game == False:
 
-        for index in range(len(random_word)):
-            if random_word[index] == user_input:
-                underscores = underscores[0:index] + \
-                    user_input + underscores[index+1:]
-        print(underscores)
-        #this isn't working
-        if letter in guessed_letters:
-            print("\nPlease choose a letter you have not already guessed!")
-        else:
-            user_input = input('Guess again... ')
-            guess_count += 1
-            print("Number of guesses made: " + (str(guess_count)))
+    for index in range(len(random_word)):
+        if random_word[index] == user_input:
+            underscores = underscores[0:index] + \
+                user_input + underscores[index+1:]
+    print(underscores)
+    #this isn't working
+    if letter in guessed_letters:
+        print("\nPlease choose a letter you have not already guessed!")
+    else:
+        user_input = input('Guess again... ')
+        guess_count += 1
+        print("Number of guesses made: " + (str(guess_count)))
 
 #this is not working
-    if user_input == 'Quit':
-        end_game = True
+if user_input == 'Quit':
+    end_game = True
