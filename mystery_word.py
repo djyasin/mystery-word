@@ -1,62 +1,78 @@
-# select random word from words.txt **
+# select random word from words.txt
 # import random module **
-# open text file with syntax **
+# open txt file using with syntax **
+# put words from txt file into list of strings **
 # select one word from list to use for testing **
 
-
-# show mystery word as underscores to use*
+# show mystery word as underscores to user **
 # ask for user guess (upper or lowercase does not matter)*
-# validate user input if user enters more than one letter*
-    # show user error: "Only guess one letter at a time"
+# validate user input if user enters more than one letter
+# show user error: "You can only guess letter a a time. Guess again: "
 
-# show user if guess is part of word*
-    # replace underscore with letter*
-    # show letters that have not been guessed
-    # put user guessed letters in a list
+# Show user if guess is part of word **
+# replace underscore with letter **
+# Show letters that have not been guessed
+
 
 # limit number of user guesses to 8
-    # keep track of usere guess count
-    # remind user how many guesses are left
-    # user only loses guess if guess is incorrect
-    # display mystery word if user runs out of guesses
-    # show error  message if they guess the same letter twice
-        # do not count as a guess
+# keep track of user guess count
+# show user how many guesses are left
+# user only loses guess if guess is incorrect
+# display mystery word if user runs out of guesses
+# show user error if they guess same letter twice. Do not count as a guess in this case.
 
-# prompt user to play again when the game ends
+# Prompt user to play again when the game ends
+# Add levels of difficulty based on random word length
 
-# empty list for words
 import random
 words = []
 underscores = []
 guesses = []
 end_game = False
+guess_count = 0
+guessed_letters = []
+letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+        "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+print(letter)
+
+#this isn't working.
+# while user_input != 'Quit':
+#     if guess_count == 8:
+#         print('You have run out of guesses!')
 
 with open('words.txt') as file:
     strings = file.readlines()
 
     for string in strings:
         words.append(string)
+    # actually get a random word from words.txt
     random_word = words[7].lower()
     random_word = random_word.replace("\n", "")
+    print(random_word)
 
     word_length = range(len(random_word))
     for num in word_length:
         underscores.append('_')
-# joins strings into one sting "" means no spaces
     underscores = "".join(underscores)
-    print(underscores)
-    user_input = input('Make a guess..').lower()
 
-# [idx for idx, item in enumerate(random-word_list) if item in a[:idx]]
-    while user_input != 'Quit!' and end_game == False:
+    print(" ".join(underscores))
+    user_input = input('Make a guess... ').lower()
+    guess_count += 1
+    print("Number of guesses made" + (str(guess_count)))
+
+    while user_input != 'Quit' and end_game == False:
+
+        for index in range(len(random_word)):
+            if random_word[index] == user_input:
+                underscores = underscores[0:index] + \
+                    user_input + underscores[index+1:]
         print(underscores)
-        user_input
-    for index in range(len(random_word)):
-        if random_word[index] == user_input:
-            underscores = underscores[0:index] + \
-                user_input + underscores[index+1:]
-    print(underscores)
-    user_input = input('Guess again..')
+        #this isn't working
+        #if letter in guessed_letters:
+        #    print("\nPlease choose a letter you have not already guessed!")
+        #else:
+        #    user_input = input('Guess again... ')
 
-        if user_input == 'Quit':
-            end_game = True
+#this is not working
+    #if user_input == 'Quit':
+        #   end_game = True
