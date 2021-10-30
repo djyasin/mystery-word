@@ -60,9 +60,9 @@ with open('words.txt') as file:
 
     print(" ".join(underscores))
     user_input = input('Make a guess... ').lower()
+    guessed_letters.append(user_input)
     
 while user_input != 'Quit' and end_game == False:
-
     for index in range(len(random_word)):
         if random_word[index] == user_input:
             underscores = underscores[0:index] + \
@@ -71,7 +71,9 @@ while user_input != 'Quit' and end_game == False:
     #this isn't working
     if user_input == random_word:
         print("Correct! Great guess.")
-        user_input 
+        guessed_letters.append(user_input)
+        if user_input == 'Quit':
+            end_game = True
 
     else: 
         user_input != random_word
@@ -80,6 +82,8 @@ while user_input != 'Quit' and end_game == False:
         print("Number of guesses made: " + (str(guess_count)))
         guessed_letters.append(user_input)
         print(guessed_letters)
+        if user_input == 'Quit':
+            end_game = True
 
 #this is not working
 if user_input == 'Quit':
