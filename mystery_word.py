@@ -68,11 +68,11 @@ with open('words.txt') as file:
                     user_input + underscores[index+1:]
         print(underscores)
         #this isn't working
-        #if letter in guessed_letters:
-        #    print("\nPlease choose a letter you have not already guessed!")
-        #else:
-        #    user_input = input('Guess again... ')
+        if letter in guessed_letters:
+            print("\nPlease choose a letter you have not already guessed!")
+        else:
+            user_input = input('Guess again... ')
 
 #this is not working
-    #if user_input == 'Quit':
-        #   end_game = True
+    if user_input == 'Quit':
+        end_game = True
