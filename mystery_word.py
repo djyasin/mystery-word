@@ -57,8 +57,9 @@ with open('words.txt') as file:
 
     print(" ".join(underscores))
     user_input = input('Make a guess... ').lower()
+
     guess_count += 1
-    print("Number of guesses made" + (str(guess_count)))
+    print("Number of guesses made: " + (str(guess_count)))
 
     while user_input != 'Quit' and end_game == False:
 
@@ -72,6 +73,8 @@ with open('words.txt') as file:
             print("\nPlease choose a letter you have not already guessed!")
         else:
             user_input = input('Guess again... ')
+            guess_count += 1
+            print("Number of guesses made: " + (str(guess_count)))
 
 #this is not working
     if user_input == 'Quit':
