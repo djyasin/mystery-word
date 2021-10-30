@@ -17,7 +17,7 @@
 # limit number of user guesses to 8
 # keep track of user guess count
 # show user how many guesses are left
-# user only loses guess if guess is incorrect
+# user only loses guess if guess is incorrect*
 # display mystery word if user runs out of guesses
 # show user error if they guess same letter twice. Do not count as a guess in this case.
 
@@ -34,9 +34,9 @@ guesses = []
 end_game = False
 guess_count = 0
 guessed_letters = []
-letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-        "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-print(letter)
+#letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+#        "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+#print(letter)
 
 #this isn't working.
 # while user_input != 'Quit':
@@ -71,12 +71,15 @@ while user_input != 'Quit' and end_game == False:
     #this isn't working
     if user_input == random_word:
         print("Correct! Great guess.")
+        user_input 
 
     else: 
         user_input != random_word
         user_input = input('Guess again... ')
         guess_count += 1
         print("Number of guesses made: " + (str(guess_count)))
+        guessed_letters.append(user_input)
+        print(guessed_letters)
 
 #this is not working
 if user_input == 'Quit':
