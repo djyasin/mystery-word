@@ -51,7 +51,7 @@ with open('words.txt') as file:
     # actually get a random word from words.txt
     random_word = words[7].lower()
     random_word = random_word.replace("\n", "")
-    print(random_word)
+    # print(random_word)
 
     word_length = range(len(random_word))
     for num in word_length:
@@ -60,10 +60,7 @@ with open('words.txt') as file:
 
     print(" ".join(underscores))
     user_input = input('Make a guess... ').lower()
-
-    guess_count += 1
-    print("Number of guesses made: " + (str(guess_count)))
-
+    
 while user_input != 'Quit' and end_game == False:
 
     for index in range(len(random_word)):
@@ -72,9 +69,11 @@ while user_input != 'Quit' and end_game == False:
                 user_input + underscores[index+1:]
     print(underscores)
     #this isn't working
-    if letter in guessed_letters:
-        print("\nPlease choose a letter you have not already guessed!")
-    else:
+    if user_input == random_word:
+        print("Correct! Great guess.")
+
+    else: 
+        user_input != random_word
         user_input = input('Guess again... ')
         guess_count += 1
         print("Number of guesses made: " + (str(guess_count)))
