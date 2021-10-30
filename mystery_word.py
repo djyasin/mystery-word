@@ -24,6 +24,9 @@
 # Prompt user to play again when the game ends
 # Add levels of difficulty based on random word length
 
+
+print("\n\n\n***Mystery Word Game***\n\n\n")
+print("You have 8 attempts to guess the word correctly. Type 'Quit' to end the game at any time. Good luck!\n\n")
 import random
 words = []
 underscores = []
