@@ -1,4 +1,4 @@
-# select random word from words.txt
+# select random word from words.txt**
 # import random module **
 # open txt file using with syntax **
 # put words from txt file into list of strings **
@@ -14,11 +14,11 @@
 # Show letters that have not been guessed
 
 
-# limit number of user guesses to 8
-# keep track of user guess count
+# limit number of user guesses to 8**
+# keep track of user guess count**
 # show user how many guesses are left
-# user only loses guess if guess is incorrect*
-# display mystery word if user runs out of guesses
+# user only loses guess if guess is incorrect**
+# display mystery word if user runs out of guesses**
 # show user error if they guess same letter twice. Do not count as a guess in this case.
 
 # Prompt user to play again when the game ends
@@ -49,7 +49,7 @@ with open('words.txt') as file:
     for string in strings:
         words.append(string)
     # actually get a random word from words.txt
-    random_word = words[0-10000].lower()
+    random_word = words[0-1000].lower()
     random_word = random_word.replace("\n", "")
     # print(random_word)
 
