@@ -34,6 +34,7 @@ guesses = []
 end_game = False
 guess_count = 0
 guessed_letters = []
+user_input = input
 #letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 #        "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 #print(letter)
@@ -58,17 +59,18 @@ with open('words.txt') as file:
         underscores.append('_')
     underscores = "".join(underscores)
 
+    
+while user_input != 'Quit' and end_game == False:
     print(" ".join(underscores))
     user_input = input('Make a guess... ').lower()
     guessed_letters.append(user_input)
     
-while user_input != 'Quit' and end_game == False:
     for index in range(len(random_word)):
         if random_word[index] == user_input:
             underscores = underscores[0:index] + \
                 user_input + underscores[index+1:]
     print(underscores)
-    #this isn't working
+    
     if user_input == random_word:
         print("Correct! Great guess.")
         guessed_letters.append(user_input)
