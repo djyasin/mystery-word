@@ -49,7 +49,7 @@ with open('words.txt') as file:
     for string in strings:
         words.append(string)
     # actually get a random word from words.txt
-    random_word = words[7].lower()
+    random_word = words[0-10000].lower()
     random_word = random_word.replace("\n", "")
     # print(random_word)
 
@@ -73,32 +73,36 @@ while user_input != 'Quit' and end_game == False:
     for index in range(len(random_word)):
         if random_word[index] == user_input:
             underscores = underscores[0:index] + \
-                user_input + underscores[index+1:]
+            user_input + underscores[index+1:]
     print(underscores)
     #this isn't working
     if user_input == random_word:
         print("Correct! Great guess.")
         
-
     else: 
         user_input != random_word
         user_input = input('Guess again... ')
         guess_count += 1
         print("Number of guesses made: " + (str(guess_count)))
         guessed_letters.append(user_input)
-        print(guessed_letters)
+        print(guessed_letters)   
         if guess_count >= 8:
             end_game =True
+            print(str(random_word))
         
 
 
 if user_input == 'Quit':
     end_game = True
+    print(random_word)
     input('Would you like to play again?(Y/N)')
+    # if input == ('Y'):
+    #     print("python mystery_word.py")
 #somehow reinitialize loop
         
 
 
 if guess_count >= 8:
     end_game =True
+    print(str(random_word))
     input('Would you like to play again?(Y/N)')
