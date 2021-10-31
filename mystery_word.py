@@ -5,7 +5,7 @@
 # select one word from list to use for testing **
 
 # show mystery word as underscores to user **
-# ask for user guess (upper or lowercase does not matter)*
+# ask for user guess (upper or lowercase does not matter)**
 # validate user input if user enters more than one letter
 # show user error: "You can only guess letter a a time. Guess again: "
 
@@ -65,6 +65,8 @@ with open('words.txt') as file:
         guess_count += 1
     if user_input == 'Quit':
         end_game = True
+    if guess_count >= 8:
+        end_game =True
     
 while user_input != 'Quit' and end_game == False:
 
@@ -85,7 +87,13 @@ while user_input != 'Quit' and end_game == False:
         print("Number of guesses made: " + (str(guess_count)))
         guessed_letters.append(user_input)
         print(guessed_letters)
+        if guess_count >= 8:
+            end_game =True
+        
 
-#this is not working
+
 if user_input == 'Quit':
     end_game = True
+
+if guess_count >= 8:
+    end_game =True
