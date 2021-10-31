@@ -94,6 +94,11 @@ while user_input != 'Quit' and end_game == False:
 
 if user_input == 'Quit':
     end_game = True
+    input('Would you like to play again?(Y/N)')
+#somehow reinitialize loop
+        
+
 
 if guess_count >= 8:
     end_game =True
+    input('Would you like to play again?(Y/N)')
