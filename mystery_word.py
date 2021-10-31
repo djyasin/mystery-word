@@ -76,9 +76,11 @@ while user_input != 'Quit' and end_game == False:
             user_input + underscores[index+1:]
     print(underscores)
     #this isn't working
-    if user_input == random_word:
+    if user_input in random_word:
         print("Correct! Great guess.")
-        
+        guessed_letters.append(user_input)
+        user_input = input('Guess again... ')
+
     else: 
         user_input != random_word
         user_input = input('Guess again... ')
