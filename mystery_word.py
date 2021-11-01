@@ -49,7 +49,7 @@ with open('words.txt') as file:
     for string in strings:
         words.append(string)
     # actually get a random word from words.txt
-    random_word = words[0-1000].lower()
+    random_word = random.choice(words)
     random_word = random_word.replace("\n", "")
     # print(random_word)
 
@@ -67,7 +67,7 @@ with open('words.txt') as file:
         end_game = True
     if guess_count >= 8:
         end_game =True
-    
+   
 while user_input != 'Quit' and end_game == False:
 
     for index in range(len(random_word)):
