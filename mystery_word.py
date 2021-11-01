@@ -102,7 +102,7 @@ if user_input == 'Quit':
     #     print("python mystery_word.py")
 #somehow reinitialize loop
         
-
+#need a function to end game if word is guessed.
 
 if guess_count >= 8:
     end_game =True
