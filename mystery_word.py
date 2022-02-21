@@ -107,4 +107,4 @@ if user_input == 'Quit':
 if guess_count >= 8:
     end_game =True
     print(str(random_word))
-    input('Would you like to play again?(Y/N)')
+    print('Thank you for playing!')
