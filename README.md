@@ -1,18 +1,5 @@
 # Mystery Word
 
-## Description
-
-Implement the game of Mystery Word.
-
-## Objectives
-
-After completing this assignment, you should be able to:
-
-- Create an interactive program.
-- Read from a file.
-- Choose a random value.
-- Keep track of state.
-
 ## Details
 
 ## Normal Mode
@@ -60,13 +47,6 @@ The game should end when the user constructs the full word or runs out of
 guesses. If the player runs out of guesses, reveal the word to the user when
 the game ends.
 
-When a game ends, ask the user if they want to play again. The game begins
-again if they reply positively.
-
-## Hard Mode
-
-Implement the [evil version of this game](http://nifty.stanford.edu/2011/schwarz-evil-hangman/).
-Put it in a new Python program called "demon_words.py".
 
 ## Credit
 
